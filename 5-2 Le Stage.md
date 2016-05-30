@@ -49,3 +49,5 @@ Cependant, suite à des discussions internes à l'équipe du service informatiqu
 Ainsi la tâche originelle qui consistait en l'installation d'un logiciel web développé en PHP sur une machine Debian s'est mué en une mission de développement d'une solution en C#, de type client léger (.NET 4.5) installé sur le serveur intranet, en tant qu'application intranet à part entière. 
 
 ## Missions et responsabilités
+
+## Les Moyens mis en oeuvre
