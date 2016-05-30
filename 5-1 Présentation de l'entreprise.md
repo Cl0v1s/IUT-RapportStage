@@ -9,14 +9,16 @@ En effet par mécanisme d'appel d'offre, la communauté urbaine de Bordeaux conf
 
 La société sélectionnée est chargée d'administrer les installations développée et mises en place par Bordeaux Métropole. Il apparait donc que la SGAC se trouve dans l'obligation de travailler en étroite collaboration avec les pouvoirs publics, tout en observant les consignes émises au niveau national par le groupe SUEZ. 
 
-L'efficacité de la SGAC est indispensable au bon fonctionnement de la vie de la communauté Bordelaise, en effet, l'assainissement des eaux usées est primordial non seulement vis à vis de la population (et ce pour des raisons sanitaires évidentes) mais est également excessivement importante en vue du respect de l'environnement. Il ne sera pas responsable de rejetter l'eau sale, polluée par les activités humaines, dans la Garonne. 
+L'efficacité de la SGAC est indispensable au bon fonctionnement de la vie de la communauté Bordelaise, en effet, l'assainissement des eaux usées est primordial non seulement vis à vis de la population (et ce pour des raisons sanitaires évidentes) mais est également excessivement importante en vue du respect de l'environnement. Il ne sera pas responsable de rejetter l'eau sale, polluée par les activités humaines, dans la Garonne. On parle ici en effet d'une quantité astronomique d'eau (TODO: insérer chiffre exact)
 
 ### Organisation structurelle
 
-C’est anciennement une filiale de la Lyonnaise des Eaux. En effet, historiquement, la CUB (l’ancien nom de Bordeaux-Métropole) avait confié la gestion des services de l’Eau potable et de l’Assainissement  à cette société du groupe Suez. En 2013, la communauté décidait de revoir complètement la structure : plusieurs délégations furent mises en place. Gestion du service public de l'eau potable fut confiée à la Lyonnaise des Eaux, la gestion du service public de l'assainissement collectif des eaux usées et des eaux pluviales revint à une nouvelle société, la SGAC, dans le cadre d'une délégation de six ans. Aujourd'hui "l'intermédiaire" Lyonnaise des eaux tend à disparaître, la SGAC se rattachant désormais directement au groupe SUEZ.  
+La SGAC une filiale de la Lyonnaise des Eaux, nom qui disparait aujourd'hui au profit de la nomenclature "SUEZ environnement". En effet, historiquement, la CUB (l’ancien nom de Bordeaux-Métropole) avait confié la gestion des services de l’Eau potable et de l’Assainissement  à cette société du groupe Suez. En 2013, la communauté décidait de revoir complètement la structure : plusieurs délégations furent mises en place. Gestion du service public de l'eau potable fut confiée à la Lyonnaise des Eaux, la gestion du service public de l'assainissement collectif des eaux usées et des eaux pluviales revint à une nouvelle filiale de la lyonnaise, la SGAC, dans le cadre d'une délégation de six ans.  
 Le service informatique de la SGAC couvre plusieurs zones sur Bordeaux (Louis Fargue, Pierre Ier, Paulin) ainsi que différentes communes girondines (Blanquefort, Lacanau, Mérignac…) Il assure le fonctionnement des réseaux et des serveurs pour les différentes activités de la société : réseau industriel, bureautique…
 
-Suite à divers remaniements internes, les appellations Lyonnaises des eaux et SGAC tendent à être mis en arrière plan, à mesure que SUEZ intègre l'ensemble de ses filiales dans une optique de centralisation croissante. (TODO: à revoir)
+(TODO: insérer ici schéma organisation structurelle)
+
+Suite à divers remaniements internes, les appellations Lyonnaises des eaux et SGAC tendent à être mis en arrière plan, à mesure que SUEZ intègre l'ensemble de ses filiales dans une optique de centralisation croissante.
 
 ## Le service informatique et sa capacité décisionnelle
 
