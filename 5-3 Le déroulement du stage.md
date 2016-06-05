@@ -51,4 +51,45 @@ Il faut savoir que, malgré l'importance capitale de cette tâche, le choix fut 
 
 En partant sur cette idée, nous nous mîmes d'accord sur un plan de migration. Il s'agissait de vérifier la configuration d'IIS sur les serveurs, de bloquer l'accès à l'ancien serveur, tout en redirigeant le nom DNS de l'intranet vers la nouvelle machine,de déplacer l'ensemble des bases de données de l'ancien serveur vers le nouveau, de déployer l'ensemble des applications depuis ma station de travail vers le Windows server 2012, d'activer les tâches planifiées et la sauvegarde des bases sur la nouvelle machine, puis enfin d'attendre les retours des utilisateurs. 
 
+(TODO: insérer ici schéma plan de migration)
+
+Etant donné que nous ne pouvions couper l'accès des salariés à l'intranet durant leur temps de travail, la migration ne devait perdurer dans le temps et être terminé avant la ré-embauche. De fait, celle-ci ne pouvait avoir lieu qu'entre 16h30 le jour J et 8h30 le lendemain. 
+
+Une fois l'heure de la débauche arrivée, le travail débuta immédiatement, en revanche, les ennuis, eux n'attendèrent pas. En effet, afin de changer le serveur vers laquel l'adresse DNS de l'intranet pointait jusque là, nous avons du réaliser une demande nationale, en spécifiant explicitement que le changement d'adresse DNS devait se faire après 16h30 et pas avant. Cependant, cette information relative à l'horaire ne fut pas prise en compte par les techniciens du service national qui modifièrent l'adresse DNS dès 14h, ce qui eu pour résultat de bloquer l'intranet pour salariés, en ne manquant pas de générer leur grogne et une phase de stress intense chez M. Fernandez et moi-même. 
+
+L'intranet fut donc bloqué tout l'après-midi et l'espoir d'une migration sans accrocs s'envola rapidement. A 16h30, nous reprîmes donc le déroulé original de notre plan, pour nous rendre compte de bon nombre de problèmes. 
+En effet, nous ne nous étions concentré que sur l'intranet en lui-même, hors, quelques cliens lourds et tâches planifiées en sont dépendants.
+
+Cette constatation marqua le début d'une période d'à-peu-prêt trois semaines relativement intense, caractérisée par des embauches vers 7h du matin (au lieu de 8h30-9h) et des débauches tardives. Relativement éprouvante dans mon cas, cette passe n'en fut pas moins enrichissante, en me permettant non seulement de découvrir la réalité du travail d'un service informatique, centre névralgique dans le cadre d'une entreprise connectée comme la SGAC. 
+
+Ces trois semaines furent consituées de corrections de bugs relativement rapides et faciles ainsi que la mise à jour d'une application importante pour les activités de la SGAC. 
+
+Cette application, nommée "Application Intranet" est en fait un client lourd permettant d'accéder depuis les postes utilisateurs à des informations présentes sur le site. Elle rassemble un client IPPOP (base de donnée patrimoine d'entreprise), un client Métrologie (qui fut au centre de tout les problèmes) ainsi qu'une interface présentant un ensemble de rapports (utilisant SQL Report Server précedemment présenté).
+
+(TODO: insérer ici screenshot metro)
+
+Outre les éternels soucis relatifs à SQL Report Server (qui furent premièrement contournés puis réellement résolus), la majeure partie des problèmes liés à cette application proviennent de son client Métrologie. 
+
+En effet, la particularité de l'application Intranet et qu'elle propose de fonctionner en deux modes distincts, le mode connecté (qui affiche directement les données présnetes sur le site) et le mode déporté. Ce mode déporté permet, dans les faits, aux salariés de travailler sur un instantané de leur base de donnée de travail dans des zones non couvertes par le réseau de la SGAC (sur le terrain). Le coeur du problème rencontré provient du fait que la technologie usitée, SQL Server Compact 3.5 ne permet plus aujourd'hui la copie d'instantannés, il fallut donc lui trouver un remplaçant (d'abord SQL Server Compact 4.0, sans succès, puis Microsoft Sync Framework) et adapter le code. Là encore, les problématiques furent nombreuses, toutes liées au fait que les machines des techniciens utilisant l'application fonctionne sous Windows XP, un système paru en 2003. 
+
+Constatant la vétustée des machines la décision fut prise de déployer sur les machines des utilisateurs une version temporaire, en attendant la configuration de Windows 7 sur leur machines, qui permettra de profiter de technologies plus récentes et performantes. 
+
+Ainsi, l'application Intranet dispose aujourd'hui de deux versions, une temporaire fonctionnant sous windows XP et une plus pérenne prévue pour fonctionner sous Windows 7.
+
+## Quatrième période (semaine 8 à fin du stage): La gestion des demandes utilisateurs et améliorations à l'intranet (TODO: à revoir le stage n'étant pas terminé)
+
+La dernière période du stage se déroula sans problèmes particulier. Le gros des problèmes issus de la migration étant résolu, seuls des corrections de bugs mineurs furent à réaliser. 
+
+Cette facilité apparente m'apparut comme relativement providentielle étant donné l'absence de M. Fernandez alors en congés. 
+
+Néanmoins, la quantité de travail en elle-même n'en fut pas ammoindrie. En effet, en parallèle des corrections de bugs, je dû me concentrer sur la résolution du problème de la gestion des demandes utilisateur. 
+
+Précedemment étudiée par le service informatique, en collaboration avec les services généraux (chargés de la résolution des problèmes matériels), la solution originellement prévue consistait en la mise en place d'un serveur habritant le logiciel client léger GESTSUP. Installation qui fut réglée en l'espace de quelques heure. Néanmoins, certains problèmes se présentèrent. Premièrement, les utilisateurs devaient se reconnecter, en usant d'informations de connexion propres à GESTSUP ce qui reste relativement problématique étant donné la tendance des salariés à constamment oublier leurs information d'authentification. Deuxièmement, GESTSUP était peut être un peu trop complet, voir complexe pour l'utilisation relativement basique que les services généraux et les salariés peuvent en avoir. Après discussion, la décision fut prise de développer en interne une solution de gestion des demandes utilisateur. 
+
+S'en suivit alors une réunion avec le responsable des services généraux qui exprima ses besoins et détailla sa manière d'utiliser la solution de ticketing actuellement mise en place (TODO: à ajouter au lexique). De là fut produit une rapide spécification fonctionelle et le développement démarra. Celui-ci se déroula sans accros et ne s'étala que sur une semaine et demi.    
+
+
+
+
+
 
