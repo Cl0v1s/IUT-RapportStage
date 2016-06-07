@@ -89,11 +89,17 @@ Celui-ci devait être exécuté après la débauche du jour J et avant l'embauch
 
 Une fois la migration à proprement parler terminée, il devait m'être possible de me consacrer à d'autres missions, tout en continuant à assurer une correction de bug rapide et efficace basée sur la réactivité du service.
 
+### Concernant les tests
+
+Etant donné l'énorme quantité d'applications (et donc de fonctionnalités à tester), le manque de documentation, de moyens humains et ma méconaissance de la façon dont s'utilise les applications, les tests réalisés avant la mise en production se cantonnaient à réaliser un ensemble d'examens statiques, relatifs au code en lui-même. 
+
+Les fonctionnalitées elle, seraient testée et les bugs corrigés en flux-tendus. C'est à dire que les applications devaient être mises en ligne tel quel, et les utilisateurs, prévenus à l'avance devaient signaler le moindre comportement anormal, qui serait immédiatement corrigé. 
+
 ## Les problèmes rencontrés et autres difficultées
 
 ### Un code ancestral 
 
-L'élement récurrent qui posa le plus de problème tout au long de la réalisation de cette mission est évidemment la vetusté du code, ou plutôt, le grand âge des technologies sur lesquelles il repose.
+L'élement récurrent qui posa le plus de problème tout au long de la réalisation de cette mission est évidemment la vetusté du code, ou plutôt, le grand âge des technologies sur lesquelles il repose (portail prévue pour IE 5.5 et ... Netscape 3).
 En effet, à bon nombre de reprise, il fallut rechercher des équivalent aux bibliothèques de l'époque, celle-ci n'ayant pas conservé la totalité de leur fonctionnalité ou ayant tout simplement disparu. 
 
 ### La dépendance
@@ -109,7 +115,7 @@ Ces dépendances peuvent être de trois natures:
 
 ### De SQL Report Server et du manque de ressources
 
-Autre source de problème plutôt conséquent: Microsoft SQL Report Server. Ce service, fonctionnant de concert avec SQL Server, permet de créer des rapports simplement qui rendent possible la visualisation simple des données présentes dans la base. Et ce notamment afin d'aider à la prise de décision ou simplement de constater l'état actuelle des installations et de l'entreprise. 
+Autre source de problème plutôt conséquent: Microsoft SQL Report Server. Ce service, fonctionnant de concert avec SQL Server, permet de créer des rapports simplement, qui rendent possible la visualisation simple des données présentes dans la base. Et ce notamment afin d'aider à la prise de décision ou simplement de constater l'état actuelle des installations et de l'entreprise. 
 Bon nombre d'applications de l'intranet font appel à ce service afin de présenter les données sans avoir à coder les différentes requètes ni à construire de nouvelles interfaces. Or, suite à différents problèmes liés au mode d'authentification utilisé par SQL Report Server, et au manque de ressources disponibles sur le sujet, tant au sein du service informatique que sur Internet, ce système nous fit perdre un temps monstrueux. La compréhension de l'origine des problèmes n'ayant été comprise que bien tard, leur résolution se fit jusque là à tâton, par "hasard".
 
 ### Les clients lourds
@@ -134,6 +140,10 @@ Afin de comprendre l'obstacle, il est nécessaire d'expliquer que le portail dis
 
 Dans les faits, le fonctionnement de ce système d'envoi de mails est assuré par un logiciel tournant en tâche de fond sur le serveur, chargé d'attendre les requètes de mails et de la transmettre au serveur SMTP se trouvant sur une autre machine. Le logiciel, lancé à la main, fonctionnait de manière tout à fait normale. En observant le trafique réseau, il nous fut possible de constater que les requètes d'envoi de mail n'atteignaient jamais le serveeur SMTP qui les refusait. En prenant contact avec le service national, il s'avera que le pare-feu situé entre le serveur Intranet et le serveur SMTP empêchait toute communication, et ce malgré la demande pourtant réalisée au préalable par M. Thierry Fernandez (demande qui fut effecutée d'ailleurs, le blocage revint sans raison apparente).   
 Cette problématique aurait été anodine si nous n'avions pas perdu un temps plus que conséquent ) examiner de notre coté le code du logiciel chargé de transmettre les demandes. De fait, malgré des avantages certains, il ne faut pas perdre de vue que l'externalisation de certains élements critiques peut parfois être source d'une perte de temps non négligeable (Il est à noté tout de même, que le code de l'application mail fut à reprendre à postériori). 
+
+### L'évolution des standards du web
+
+Les standards du web sont mis en point par le W3C, organisme chargé de veiller au bon développement des technologies de l'internet. Relativement stables depuis l'apparition de HTML5, la façon dont traitaient Javascript les navigateur auparavant étaient plus qu'aléatoire. Le code ayant été prévu pour fonctionner sur une vieille version d'internet explorer, une quantité assez importante du code javascript présent dans les pages est problématique. L'essentiel des corrections de bugs rapide ayant eu lieu vers la fin du stage est lié à des problèmes d'interprétation du langage de script coté client. 
 
 ## La documentation
 
@@ -211,6 +221,8 @@ Celui-ci a l'avantage de permettre un lien avec le modèle des données tout à 
 
 (TODO: insérer ici logo linq) 
 
+Constatant les problématiques posées par l'usage de javascript au long terme, nous avons préféré mettre de côté le fameux langage de script coté client pour réaliser la totalité des traitements coté serveur. 
+
 ### Le modèle de données
 
 Une fois les choix de technologies effecutés, la phase de conception passa par l’élaboration d’un modèle conceptuel de données (MCD). Cette représentation graphique permet de mieux visualiser les tables nécessaires à l’application et les liens entre elles. Après discussion en interne en compagnie de M. Thierry Fernandez, le modèle suivant fut conceptualisé...
@@ -243,7 +255,7 @@ Etant donné la non-complexité apparente des algorithmes, il n'apparut pas néc
 
 L'ensemble des bugs ainsi détectés furent corrigés à la volé, sans que l'on rencontre de problèmes majeurs. 
 
-### Optimisation du code
+### Optimisation et documentation du code
 
 Etant donné le faible temps passé sur la réalisation, nous avions à notre disposition un temps important, qui fut consacré à l'optimisation du code de l'application. 
 

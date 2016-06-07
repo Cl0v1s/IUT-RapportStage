@@ -49,9 +49,7 @@ Cette architecture globale présente de nombreux avantages ainsi que quelques in
 
 A ces applications web s'ajoutent un certain nombre d'applications de type client lourd, permettant pour l'essentiel une administration facile et rapide de la part du service informatique (gestion des droits etc...). Néanmoins, on remarque également l'existance d'un client lourd métiers permetant aux différents services de gagner en productivité. 
 
-(TODO: insérer ici schéma cartographie interdépendance)
-
-Le réseau Bureautique est relié au réseau industriel par l'intermédiaire de passerelles (une principale et une auxilliaire, utilisée en cas de secours) permettant à tout les postes utilisateurs d'atteindre l'intranet, sécurisées par un Par-Feu, administré au niveau national. 
+Le réseau Bureautique est relié au réseau industriel par l'intermédiaire de passerelles (une principale et une auxilliaire, utilisée en cas de secours) permettant à tout les postes utilisateurs d'atteindre l'intranet, sécurisées par un Pare-Feu, administré au niveau national. 
 
 #### La Bureautique dans le cadre d'une gestion nationale
 
