@@ -65,7 +65,7 @@ L'intranet est dans les faits consitué de deux groupes d'applications distincts
 Nous constatons la présence, d'une part, des applications de type client léger qui permettent à la fois aux différents services d'atteindre leurxs objectifs mais une une meilleur transmission de l'information au sein de l'entreprise tout entière (ce qui permet des gains de productivité notables, tout en aidant à la prise de décision). 
 Il est a noté qu'un site Web appelé Portail Intranet permet l'accès aux différentes applications, tout en en gérant le système d'authentification. 
 
-D'autre part, il existe un certain nombre d'applications client lourds, de type logiciel windows, reposant aussi sur des élements de l'intranet tels que la base de données, ou les fonctions d'authentification du portail. Etant donné que nous faisions évoluer ces élements de base; une évolutiondes clients lourds s'imposa (elle était de toute manière tout aussi essentielle que la migration de l'intranet en lui-même). A noté que j'appris l'existence de telles application a postériori de la migration, élement relativement important par la suite. 
+D'autre part, il existe un certain nombre d'applications client lourds, de type logiciel windows, reposant aussi sur des élements de l'intranet tels que la base de données, ou les fonctions d'authentification du portail. Etant donné que nous faisions évoluer ces élements de base; une évolution des clients lourds s'imposa (elle était de toute manière tout aussi essentielle que la migration de l'intranet en lui-même). A noté que j'appris l'existence de telles applications a postériori de la migration, élement relativement important par la suite. 
 
 ### De l'organisation de travail 
 
@@ -101,6 +101,12 @@ En effet, à bon nombre de reprise, il fallut rechercher des équivalent aux bib
 Il est important également de souligner que, comme présenté plus haut, l'interdépendance des différents élements composant l'intranet est excessivement forte, ce qui en l'absence de documentation ou de cartographie quelconque se révèla plus que problématique tout au long de la migration. 
 En effet, il arriva plusieurs fois que la moindre modification d'une application entraîne des répercussions imprévues non seulement à l'intérieur même de l'application (ce qui semble normal) mais également au sein d'autres constituantes avec lequel le lien logique n'est pas toujours clair, lorsqu'on ne maîtrise pas totalement l'articuliation des activités de la société comme se fut mon cas. 
 
+Ces dépendances peuvent être de trois natures: 
+
+* Les bibliothèques: bon nombre des élements applicatifs sont en fait des bibliothèques de méthodes et de classes utilisées par plusieurs projets. Modifier une bibliothèques pour un projet peut entrainer des répercussion sur une autre application qui en dépend. 
+* Les données: De même, certaines applications reposent sur une même base de données. La modifier pour une application peut être source de problèmes. 
+* Les Webservices: sorte d'interfaces web qui permettent à deux programmes de fonctionner eux s'echangeant des données, à la manière d'une API Web. Etant donné leur utilité même, il apparait que les modifier peut entrainer l'apparition de comportements non désirés sur les applications qui en dépendent. Ceux-ci furent problématiques non seulement parce que les déplacer casse leurs liens avec les applications clients mais aussi suite à des problèmes de version. Un WebService en .NET 4.5 n'est pas compatible avec un client en .NET 4.0 par exemple. 
+
 ### De SQL Report Server et du manque de ressources
 
 Autre source de problème plutôt conséquent: Microsoft SQL Report Server. Ce service, fonctionnant de concert avec SQL Server, permet de créer des rapports simplement qui rendent possible la visualisation simple des données présentes dans la base. Et ce notamment afin d'aider à la prise de décision ou simplement de constater l'état actuelle des installations et de l'entreprise. 
@@ -108,7 +114,7 @@ Bon nombre d'applications de l'intranet font appel à ce service afin de présen
 
 ### Les clients lourds
 
-D'autre part, et comme introduit plus haut, L'existence d'applications de type client lourds ne fut porté à ma connaissance qu'une fois la migration effective, lorsque bon nombre d'entre elles ne fonctionnèrent plus normalement. L'une d'entre elle, tout particulièrement, demanda une quantité de travail plus qu'importante. 
+D'autre part, et comme introduit plus haut, L'existence d'applications de type client lourds ne fut porté à ma connaissance qu'une fois la migration effective, lorsque bon nombre d'entre elles ne fonctionnèrent plus normalement. Situation qu'il fallut corriger dans une situation d'urgence relative.L'une d'entre elle, tout particulièrement, demanda une quantité de travail plus qu'importante. 
 Celle-ci, sobrement nommée "Application Intranet", permet d'accéder depuis les postes utilisateurs à des informations présentes sur le site. Elle rassemble un client IPPOP (base de donnée patrimoine d'entreprise), un client Métrologie (qui fut au centre de tout les problèmes) ainsi qu'une interface présentant un ensemble de rapports (utilisant SQL Report Server précedemment présenté).
 
 (TODO: insérer ici screenshot metro)
@@ -129,6 +135,17 @@ Afin de comprendre l'obstacle, il est nécessaire d'expliquer que le portail dis
 Dans les faits, le fonctionnement de ce système d'envoi de mails est assuré par un logiciel tournant en tâche de fond sur le serveur, chargé d'attendre les requètes de mails et de la transmettre au serveur SMTP se trouvant sur une autre machine. Le logiciel, lancé à la main, fonctionnait de manière tout à fait normale. En observant le trafique réseau, il nous fut possible de constater que les requètes d'envoi de mail n'atteignaient jamais le serveeur SMTP qui les refusait. En prenant contact avec le service national, il s'avera que le pare-feu situé entre le serveur Intranet et le serveur SMTP empêchait toute communication, et ce malgré la demande pourtant réalisée au préalable par M. Thierry Fernandez (demande qui fut effecutée d'ailleurs, le blocage revint sans raison apparente).   
 Cette problématique aurait été anodine si nous n'avions pas perdu un temps plus que conséquent ) examiner de notre coté le code du logiciel chargé de transmettre les demandes. De fait, malgré des avantages certains, il ne faut pas perdre de vue que l'externalisation de certains élements critiques peut parfois être source d'une perte de temps non négligeable (Il est à noté tout de même, que le code de l'application mail fut à reprendre à postériori). 
 
+## La documentation
+
+Constatant le temps perdu à comprendre le fonctionnement de l'Intranet, et les problèmes liés à la non documentation de celui-ci, une des tâches qui me fut confié était de réaliser un certain nombre de guide d'installation, concernant certaines applications récalcitrantes, ainsi que de cartographie les interdépendance, tout en assurant une certaine documentation de ma propre production. 
+
+Ainsi, entre autre, furent produite une cartographie des interdépendances entre les applications: 
+
+(TODO: insérere ici carto)
+
+Ainsi qu'un schéma présentant l'organisation du code du portail, largement modifié par mes soins:
+
+(TODO: inséer ici schéma âortail)
 
 # L'objectif secondaire: La gestion des demandes faites aux services généraux
 
@@ -147,6 +164,8 @@ Historiquement, la SGAC utilisait un logiciel développé par son service inform
 Cependant, suite à des discussions internes à l'équipe du service informatique, en relation avec les services généraux et en vue de la complexité d'intégration du logiciel de ticketing (qui n'est pas compatible avec le système de gestion d'authentification et des droits de la SGAC), il a été décidé que le service informatique développerait, par mon intermédiaire, sa propre solution de gestion de tickets. 
 
 Ainsi la tâche originelle qui consistait en l'installation d'un logiciel web développé en PHP sur une machine Debian s'est mué en une mission de développement d'une solution en C#, de type client léger (.NET 4.5) installé sur le serveur intranet, en tant qu'application à part entière. 
+
+A noté qu'étant donné que la production de documents ne fait pas partie de la culture du service informatique, l'essentiel de la conception se réalisa en se basant sur de simples notes et sur la collaboration rapprochée des services généraux, futurs utilisateurs de l'application et jouant ici le rôle de "clients". La production en elle-même est en revanche parfaitement documentée. 
 
 ## Description de l'existant 
 
@@ -228,18 +247,7 @@ L'ensemble des bugs ainsi détectés furent corrigés à la volé, sans que l'on
 
 Etant donné le faible temps passé sur la réalisation, nous avions à notre disposition un temps important, qui fut consacré à l'optimisation du code de l'application. 
 
-Cette optimisation pris la forme d'une refactorisation relativement importante
+Cette optimisation pris la forme d'une refactorisation relativement importante, associée à un ajout de commentaires massifs et ce notamment grâce à l'outils de conception de documentation intégré à Visual Studio, qui permet de générer facilement et simplement de la documentation sur chacun des élements du code.
 
+(TODO: insérer ici schéma doc xml)
 
-
-## Quelques tâches auxilliaires 
-
-**E**n plus de ces deux principaux objectifs, j'eu à atteindre quelques objectifs secondaires comme en premier lieu, configurer les outils que nous allions utiliser (présentés plus bas) ainsi que, dans un second temps migrer l'ensemble du code source produit par le service ces 10 dernières années vers une nouvelle plateforme de versionning. Il est important de souligner également qu'une tâche d'importance non négligeable qui m'incomba fut de rédiger quelques élements documentaires sur les grandes lignes du système et de mon travail. Elements que vous pourrez retrouver à divers endroits de ce rapports, placés dans un objectif d'illustration. 
-
-
-
-
-
-<hr>
-
-**T**out au long de cette partie, nous avons décris les objectifs à atteindre, leurs enjeux, ainsi que la nature des moyens mis en oeuvre. Dans la section qui va suivre, nous allons donc nous pencher sur le déroulement de ces tâches et les divers problèmes rencontré, ainsi que les solutions qui y furent opposées.
