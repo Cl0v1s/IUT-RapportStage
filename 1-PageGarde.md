@@ -77,7 +77,7 @@ div#logos span div div
 **Sous la direction conjointe de**:
 
 * M. Thierry Ferrand, Responsable du service informatique industrielle au sein de la SGAC
-* M. Thierry Fernandez, (TODO: trouver dénomination exacte)
+* M. Thierry Fernandez, Support informatique industrielle
 * M. Jean-Pierre Jardry, Enseignant Superviseur
 
 

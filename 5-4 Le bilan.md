@@ -22,9 +22,27 @@ Cette idée de crédibilité de l'informaticien est extrémement importante, san
 D'une manière générale, il est nécessaire, sinon pratique de prendre en compte la psychologie de l'utilisateur dans son organisation. J'ai d'ailleurs pu, au cours de mon stage constater une phénomène intéressant:
 
 En situation normale, lorsque l'utilisateur lambda rencontre un comportement inattendu (ou du moins que lui n'attendait pas), il essaye, à l'aide de ses connaissance de le contourner, voir de le résoudre. En revanche, lorsque l'on annonce à ce même utilisateur que l'outil qu'il use peut dysfonctionner, celui-ci ne va pas chercher à résoudre le problème et va directement le reporter. 
-Ce comportement est à double-tranchant. Si le phénomène est effectivement un bug, c'est parfait, ainsi le service informatique est rapidement et directement mis au courant. En revanche, si le problème est uniquement lié à la non-compétence de l'utilisateur dans le domaine de l'informatique, celui-ci vous aura simplement faire perdre votre temps, le problème reporté n'en étant pas un.  
+Ce comportement est à double-tranchant. Si le phénomène est effectivement un bug, c'est parfait, ainsi le service informatique est rapidement et directement mis au courant. En revanche, si le problème est uniquement lié à la non-compétence de l'utilisateur dans le domaine de l'informatique, celui-ci vous aura simplement faire perdre votre temps, le problème reporté n'en étant pas un. 
+
+### De la politique au sein de l'entreprise 
+
+Autre élement insoupsonné, les jeux de pouvoirs. En effet, même si l'objectif final des salariés d'une entreprise est toujours d'aider celle-ci à remplir sa mission, afin d'en tirer des bénéfices (finalité lucrative), ceux-ci peuvent avoir des visions très différentes quand aux outils à utiliser pour l'atteindre. Se joue alors une lutte plus ou moins "importante" afin de faire accepter ses solutions par le groupe. Cette constation, j'ai pu la faire étant donné que la SGAC se retrouve intégrée dans une logique nationale. Pouvoir national réalisant des choix parfois remis en cause par les employés à l'échelle locale.  
+User de charisme et de persuasion se révèle parfois utile afin de faire accepter les solutions que l'on pense bénéfique à l'entreprise.
 
 ## Bilan relatif au travail réalisé
+
+### Concernant l'intranet
+
+Aujourd'hui, la quasi-totalité des applications de l'intranet fonctionnent sans problème, l'essentiel des bugs constatés se concentrant sur un petit nombre de logiciels.  
+L'objectif de migration du portail et des cinq applications tel qu'indiqué dans l'offre de stage à donc été atteint et dépassé puisque l'ensemble (à une exception près) des 16 clients légers de l'intranet ont été mis à jour. 
+
+Le client lourd "Application Intranet" présentant des fonctionnalités de base de données déporté va être déployé dans sa version Windows 7 dans quelques temps, mise à jour qui devrait se dérouler sans problème particulier. 
+
+Une certaine quantité d'informations relatives à l'architecture de l'intranet ainsi qu'à la correction de bug ayant été produite, les éventuels problèmes futurs devraient pouvoir être résolus à l'avenir par Thierry Fernandez. 
+
+### Concernant l'application de gestion des demandes de services généraux
+
+L'application dévelopée par mes soins est actuellement utilisée sur le site de Louis Fargue, et remplie parfaitement sa fonction. Celle-ci devrait être déployée sur d'autres sites administrés par la SGAC dans un avanir proche, en fonction des choix des différents responsables des services généraux.  
 
 
 

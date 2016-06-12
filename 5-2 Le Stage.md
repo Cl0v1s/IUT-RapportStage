@@ -69,6 +69,12 @@ L'installation de l'ensemble de ces outils consititua d'ailleurs la première t�
 
 Il est à noter l'absence de documentation à proprement parler, en effet, il semblerait que le service, comme les peuplades d'Afrique Centrale, préfère une tradition orale à la rédaction de documentations. Tâche (trop ?) chronophage s'il en est, au vues des faibles ressources humaines misent à la disposition du service informatique et de la bonne qualité du code fournit. De fait, ormis les quelques commentaires présents dans le code, nous dûmes travailler en découvrant l'architecture du système logiciel au fur et à mesure de notre progression, en nous aidant des connaissances acquises par Monsieur Thierry Fernandez au cours de ses propres explorations dans le code.
 
+## Qu'est-ce que la migration ?
+
+Migrer une application .NET designe ici l'action de mettre à jour son code afin de l'adapter à la dernière version de l'environnement d'exécution .NET, afin de profiter des dernières avancées techniques.  
+Concrètement, cela consiste à remplacer certaines fonctions obsolètes et optimiser le code en profitant des possibilités apportées par les versions plus récentes.   
+Une autre tâche importante consiste en la mise à jour des ressources sur lesquelles reposent les projets (essentiellement des bibliothèques) pour les mêmes raisons qu'expliqué plus haut. 
+
 ## Les applications à migrer
 
 ### Description de l'objet du travail réalisé

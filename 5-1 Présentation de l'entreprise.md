@@ -5,7 +5,7 @@
 ### Mission
 
 **L**a SGAC, Société de Gestion de l’assainissement de Bordeaux Métropole, est l’acteur à qui la communauté d’agglomération a confié la gestion déléguée du service de l’assainissement. 
-En effet par mécanisme d'appel d'offre, la communauté urbaine de Bordeaux confie à des sociétés privées la gestion de son réseau dédié à son assainissement et ce pour une durée de 6 ans (TODO: à vérifier). Elle est, dans ce cadre confrontée, entre autres à la concurrence de Véolia ainsi que de la SAUR. 
+En effet par mécanisme d'appel d'offre, la communauté urbaine de Bordeaux confie à des sociétés privées la gestion de son réseau dédié à son assainissement et ce pour une durée de 6 ans. Elle est, dans ce cadre confrontée, entre autres à la concurrence de Véolia ainsi que de la SAUR. 
 
 La société sélectionnée est chargée d'administrer les installations développée et mises en place par Bordeaux Métropole. Il apparait donc que la SGAC se trouve dans l'obligation de travailler en étroite collaboration avec les pouvoirs publics, tout en observant les consignes émises au niveau national par le groupe SUEZ. 
 
@@ -22,7 +22,7 @@ Suite à divers remaniements internes, les appellations Lyonnaises des eaux et S
 
 ### L'organisation du service informatique 
 
-**L**a SGAC possède son propre service informatique, découpé en deux sections. La première est dévolue à l’informatique industrielle. De nombreux serveurs ont à leur charge un très grand nombre d’outils de contrôle des stations d’épuration, de pompage, ainsi que des bassins d’étalement (TODO: à ajouter dans le lexique). C’est aussi là que sont paramétrés et testés différents automates et applications.  
+**L**a SGAC possède son propre service informatique, découpé en deux sections. La première est dévolue à l’informatique industrielle. De nombreux serveurs ont à leur charge un très grand nombre d’outils de contrôle des stations d’épuration, de pompage, ainsi que des bassins d’étalement. C’est aussi là que sont paramétrés et testés différents automates et applications.  
 
 La seconde section concerne la bureautique.  Les équipes du service interviennent sur le vaste réseau informatique de la SGAC. Il s’agit de surveiller, gérer et assurer la maintenance du réseau, des différents serveurs, intervenir sur les postes utilisateurs ainsi que de répondre aux besoins des salariés en terme de solutions logicielles (installation de produits existants et développement de systèmes internes). Chaque réseau est protégé par un pare-feu. Une DMZ est en place et héberge notamment le serveur intranet (qui présente certaines informations devant être accessibles depuis l'extérieur du réseau, on parle aussi d'extranet).  
 
